@@ -16,7 +16,7 @@ LDR     = gfortran
 # FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -C -qflttrap
 # FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -O2 -static
 # FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl 
-LFLAGS = -lnlopt -lm
+# LFLAGS = -lnlopt -lm
 # FFLAGS  = -ffixed-line-length-132 -fimplicit-none -fno-automatic -O4
 FFLAGS  = -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace
 COMMAND = main
