@@ -35,9 +35,9 @@ SUBS = \
 # LIB1 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
 # LIB2 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
 LIB1 = -framework Accelerate
-LIB3 = /Users/stixrude/WORK/SCILIBS/MINPACK/minpack_dp.a
+# LIB3 = /Users/stixrude/WORK/SCILIBS/MINPACK/minpack_dp.a
 # LIB4 = /Users/stixrude/WORK/SCILIBS/slatec4gf41c/libslatec.a
-LIB4 = /Users/stixrude/WORK/SCILIBS/slatec/libslatec.a
+# LIB4 = /Users/stixrude/WORK/SCILIBS/slatec/libslatec.a
 
 $(COMMAND): $(MAIN) $(SUBS)
 	$(LDR) $(LFLAGS) -o $(COMMAND) $(MAIN) $(SUBS) $(LIB1) $(LIB2) $(LIB3) $(LIB4)
