@@ -4,5 +4,8 @@
 	x = 0.5
 	y = atan(x)
 	print*, x,y
+	z = cos(x)
+	print*, 'Do some more math'
+	print*, x,z
 	stop
 	end
