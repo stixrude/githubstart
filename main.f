@@ -7,5 +7,8 @@
 	z = cos(x)
 	print*, 'Do some more math'
 	print*, x,z
+	z = sin(x)
+	print*, 'Do yet more math'
+	print*, x,z
 	stop
 	end
