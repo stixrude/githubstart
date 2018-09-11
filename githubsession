@@ -1,0 +1,665 @@
+Last login: Thu Aug 30 19:16:53 on ttys000
+Larss-MBP:~ stixrude$ tcsh
+stixrude@Larss-MBP[/Users/stixrude]cd work
+stixrude@Larss-MBP[/Users/stixrude/work]ls
+BIRCH/		LIQUIDS/	MACH/		MS/		Papers/		SCILIBS/	THEORY/		gitstart/
+CIJ/		Lars/		MAGMA_code/	PREM/		REFLECT/	SKEW/		VASP/
+stixrude@Larss-MBP[/Users/stixrude/work]cd fitstart
+fitstart: No such file or directory.
+stixrude@Larss-MBP[/Users/stixrude/work]cd gitstart
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart]ls
+project1/
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart]cd project1
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]ls
+file1.f
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+        program file1
+        print*, 'This is my first use of git'
+        print*, 'Do some math'
+        x = 0.5
+        y = atan(x)
+        print*, x,y
+        stop
+        end
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+"file1.f" 8L, 124C written
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]git add file1.f
+        subroutine quad(x,y)
+
+        y = 1.0 + x + x**2
+
+        program file1
+        print*, 'This is my first use of git'
+        print*, 'Do some math'
+        x = 0.5
+        y = atan(x)
+# Compiles main.f
+
+# CFT     = f77
+# LDR     = f77
+# mac f77 FFLAGS = -N113 -f -N1 -O
+# sgi FFLAGS  = -r8
+# CFT     = /Applications/Absoft/bin/f90
+# LDR     = /Applications/Absoft/bin/f90
+# FFLAGS  = -N113 -lU77 -s -O
+# CFT     = xlf -F:xlf_s
+# LDR     = xlf -F:xlf_s
+# CFT     = xlf
+# LDR     = xlf
+CFT     = gfortran
+LDR     = gfortran
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -C -qflttrap
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -O2 -static
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl
+LFLAGS = -lnlopt -lm
+# FFLAGS  = -ffixed-line-length-132 -fimplicit-none -fno-automatic -O4
+FFLAGS  = -ffixed-line-length-132 -fimplicit-none -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace
+LDR     = gfortran
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -C -qflttrap
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -O2 -static
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl
+LFLAGS = -lnlopt -lm
+# FFLAGS  = -ffixed-line-length-132 -fimplicit-none -fno-automatic -O4
+FFLAGS  = -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace
+COMMAND = main
+
+.f.o :
+        $(CFT) $(FFLAGS) $*.f -c
+
+MAIN = main.o
+
+SUBS = \
+quad.o
+
+# LIB1 = /afs/lsa.umich.edu/group/geo/users/stixrude/NUMRECSGI/libsginumrec.a
+# LIB1 = /big3/crlb/FORCES/,subroutines/libnumrec.a
+# LIB1 = ~/work/ARCHIVES/blas-old/liblpsblas.a
+# LIB1 = /Users/stixrude/work/ARCHIVES/ATLAS3.8.0/ATLAS_mac/lib/libtstatlas.a
+# LIB1 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+# LIB2 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+"makefile" 44L, 1584C written
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]make
+make: *** No rule to make target `main.o', needed by `main'.  Stop.
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]ls
+file1.f		makefile*	quad.f
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]mv file1.f main.f
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]make
+gfortran -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace main.f -c
+f951: Warning: Nonconforming tab character in column 1 of line 1 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 2 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 3 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 4 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 5 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 6 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 7 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 8 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 9 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 10 [-Wtabs]
+gfortran -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace quad.f -c
+f951: Warning: Nonconforming tab character in column 1 of line 1 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 3 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 5 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 6 [-Wtabs]
+gfortran -lnlopt -lm -o main main.o quad.o -framework Accelerate  /Users/stixrude/WORK/SCILIBS/MINPACK/minpack_dp.a /Users/stixrude/WORK/SCILIBS/slatec/libslatec.a
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]ls
+main*		main.f		main.o		makefile*	quad.f		quad.o
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]mv main.f file1.f
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]git mv file1.f main.f
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]git add quad.f
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]git add makefile
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]ls
+main*		main.f		main.o		makefile*	quad.f		quad.o
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]git commit -m"My second commit adding subroutine quad.f change main program filename to main.f"
+[master b381d80] My second commit adding subroutine quad.f change main program filename to main.f
+ 3 files changed, 50 insertions(+)
+ rename file1.f => main.f (100%)
+ create mode 100755 makefile
+ create mode 100644 quad.f
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]git log
+commit b381d80061c4c14ca4aed91150eae77c51c3dede (HEAD -> master)
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 13:53:21 2018 -0700
+
+    My second commit adding subroutine quad.f change main program filename to main.f
+
+commit b8eceed4614d9a3613cbadf1ad3d1546ab031a19
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 13:22:28 2018 -0700
+
+    My first commit
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]main
+ This is my first use of git
+ Do some math
+  0.500000000      0.463647604    
+ output of quad  0.500000000       1.75000000    
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart/project1]cd ..
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart]ls
+project1/
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart]git remote add project1 https://github.com/stixrude/githubstart.git
+fatal: not a git repository (or any of the parent directories): .git
+stixrude@Larss-MBP[/Users/stixrude/work/gitstart]cd ..
+        program githubstart
+        print*, 'First program in github'
+        print*, 'Do some math'
+COMMAND = main
+
+.f.o :
+        $(CFT) $(FFLAGS) $*.f -c
+
+MAIN = main.o
+
+SUBS = \
+
+# LIB1 = /afs/lsa.umich.edu/group/geo/users/stixrude/NUMRECSGI/libsginumrec.a
+# LIB1 = /big3/crlb/FORCES/,subroutines/libnumrec.a
+# LIB1 = ~/work/ARCHIVES/blas-old/liblpsblas.a
+# LIB1 = /Users/stixrude/work/ARCHIVES/ATLAS3.8.0/ATLAS_mac/lib/libtstatlas.a
+# LIB1 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+# LIB2 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+LIB1 = -framework Accelerate
+LIB3 = /Users/stixrude/WORK/SCILIBS/MINPACK/minpack_dp.a
+# LIB4 = /Users/stixrude/WORK/SCILIBS/slatec4gf41c/libslatec.a
+LIB4 = /Users/stixrude/WORK/SCILIBS/slatec/libslatec.a
+
+$(COMMAND): $(MAIN) $(SUBS)
+        $(LDR) $(LFLAGS) -o $(COMMAND) $(MAIN) $(SUBS) $(LIB1) $(LIB2) $(LIB3) $(LIB4)
+~
+"makefile" 43L, 1577C written
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]make
+gfortran -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace main.f -c
+f951: Warning: Nonconforming tab character in column 1 of line 1 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 2 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 3 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 4 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 5 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 6 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 7 [-Wtabs]
+f951: Warning: Nonconforming tab character in column 1 of line 8 [-Wtabs]
+gfortran -lnlopt -lm -o main main.o  -framework Accelerate  /Users/stixrude/WORK/SCILIBS/MINPACK/minpack_dp.a /Users/stixrude/WORK/SCILIBS/slatec/libslatec.a
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]main
+ First program in github
+ Do some math
+  0.500000000      0.463647604    
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]ls
+README.md	main*		main.f		main.o		makefile*
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git add main.f
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git add makefile
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git commit -m "add program and makefile"
+FFLAGS  = -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace
+COMMAND = main
+
+.f.o :
+        $(CFT) $(FFLAGS) $*.f -c
+
+MAIN = main.o
+
+SUBS = \
+
+# LIB1 = /afs/lsa.umich.edu/group/geo/users/stixrude/NUMRECSGI/libsginumrec.a
+# LIB1 = /big3/crlb/FORCES/,subroutines/libnumrec.a
+# LIB1 = ~/work/ARCHIVES/blas-old/liblpsblas.a
+# LIB1 = /Users/stixrude/work/ARCHIVES/ATLAS3.8.0/ATLAS_mac/lib/libtstatlas.a
+# LIB1 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+# LIB2 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+LIB1 = -framework Accelerate
+# LIB3 = /Users/stixrude/WORK/SCILIBS/MINPACK/minpack_dp.a
+# LIB4 = /Users/stixrude/WORK/SCILIBS/slatec4gf41c/libslatec.a
+# LIB4 = /Users/stixrude/WORK/SCILIBS/slatec/libslatec.a
+
+$(COMMAND): $(MAIN) $(SUBS)
+        $(LDR) $(LFLAGS) -o $(COMMAND) $(MAIN) $(SUBS) $(LIB1) $(LIB2) $(LIB3) $(LIB4)
+"makefile" 43L, 1581C written
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git commit -m "remove slatec library"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+	modified:   makefile
+
+Untracked files:
+	main
+	main.o
+
+no changes added to commit
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git push -u origin master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Everything up-to-date
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git log
+commit 717229b670a7d05a8fb19d0ab52b3c877c8d3d3e (HEAD -> master, origin/master)
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:05:11 2018 -0700
+
+    add program and makefile
+
+commit 2938e8d3bf246f483e99c08deb5ed1be22395706
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:02:14 2018 -0700
+
+    first commit
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]more makefile
+# Compiles main.f
+
+# CFT     = f77
+# LDR     = f77
+# mac f77 FFLAGS = -N113 -f -N1 -O
+# sgi FFLAGS  = -r8
+# CFT     = /Applications/Absoft/bin/f90
+# LDR     = /Applications/Absoft/bin/f90
+# FFLAGS  = -N113 -lU77 -s -O
+# CFT     = xlf -F:xlf_s
+# LDR     = xlf -F:xlf_s
+# CFT     = xlf 
+# LDR     = xlf
+CFT     = gfortran
+LDR     = gfortran
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -C -qflttrap
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -O2 -static
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl 
+LFLAGS = -lnlopt -lm
+# FFLAGS  = -ffixed-line-length-132 -fimplicit-none -fno-automatic -O4
+FFLAGS  = -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace
+COMMAND = main
+
+.f.o :
+        $(CFT) $(FFLAGS) $*.f -c
+
+MAIN = main.o
+
+SUBS = \
+
+# LIB1 = /afs/lsa.umich.edu/group/geo/users/stixrude/NUMRECSGI/libsginumrec.a
+# LIB1 = /big3/crlb/FORCES/,subroutines/libnumrec.a
+# LIB1 = ~/work/ARCHIVES/blas-old/liblpsblas.a
+# LIB1 = /Users/stixrude/work/ARCHIVES/ATLAS3.8.0/ATLAS_mac/lib/libtstatlas.a
+# LIB1 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+# LIB2 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+LIB1 = -framework Accelerate
+# LIB3 = /Users/stixrude/WORK/SCILIBS/MINPACK/minpack_dp.a
+# LIB4 = /Users/stixrude/WORK/SCILIBS/slatec4gf41c/libslatec.a
+# LIB4 = /Users/stixrude/WORK/SCILIBS/slatec/libslatec.a
+
+$(COMMAND): $(MAIN) $(SUBS)
+        $(LDR) $(LFLAGS) -o $(COMMAND) $(MAIN) $(SUBS) $(LIB1) $(LIB2) $(LIB3) $(LIB4)
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]ls
+README.md	main*		main.f		main.o		makefile*
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]more makefile
+# Compiles main.f
+
+# CFT     = f77
+# LDR     = f77
+# mac f77 FFLAGS = -N113 -f -N1 -O
+# sgi FFLAGS  = -r8
+# CFT     = /Applications/Absoft/bin/f90
+# LDR     = /Applications/Absoft/bin/f90
+# FFLAGS  = -N113 -lU77 -s -O
+# CFT     = xlf -F:xlf_s
+# LDR     = xlf -F:xlf_s
+# CFT     = xlf 
+# LDR     = xlf
+CFT     = gfortran
+LDR     = gfortran
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -C -qflttrap
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -O2 -static
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl 
+LFLAGS = -lnlopt -lm
+# FFLAGS  = -ffixed-line-length-132 -fimplicit-none -fno-automatic -O4
+FFLAGS  = -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace
+COMMAND = main
+
+.f.o :
+        $(CFT) $(FFLAGS) $*.f -c
+
+MAIN = main.o
+
+SUBS = \
+
+# LIB1 = /afs/lsa.umich.edu/group/geo/users/stixrude/NUMRECSGI/libsginumrec.a
+# LIB1 = /big3/crlb/FORCES/,subroutines/libnumrec.a
+# LIB1 = ~/work/ARCHIVES/blas-old/liblpsblas.a
+# LIB1 = /Users/stixrude/work/ARCHIVES/ATLAS3.8.0/ATLAS_mac/lib/libtstatlas.a
+# LIB1 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+# LIB2 = /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+LIB1 = -framework Accelerate
+# LIB3 = /Users/stixrude/WORK/SCILIBS/MINPACK/minpack_dp.a
+# LIB4 = /Users/stixrude/WORK/SCILIBS/slatec4gf41c/libslatec.a
+# LIB4 = /Users/stixrude/WORK/SCILIBS/slatec/libslatec.a
+
+$(COMMAND): $(MAIN) $(SUBS)
+        $(LDR) $(LFLAGS) -o $(COMMAND) $(MAIN) $(SUBS) $(LIB1) $(LIB2) $(LIB3) $(LIB4)
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]ls
+README.md	main*		main.f		main.o		makefile*
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git push -u origin master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Everything up-to-date
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]ls -l makefile
+-rwxr-xr-x  1 stixrude  staff  1581 Sep  1 14:30 makefile*
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git add makefile
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git commit -m "remove slatec library"
+[master 7b45ec5] remove slatec library
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/stixrude/githubstart.git
+   717229b..7b45ec5  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git log
+commit 7b45ec55a1aec1e193c57e549bf1577c4e6c7bb9 (HEAD -> master, origin/master)
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:33:56 2018 -0700
+
+    remove slatec library
+
+commit 717229b670a7d05a8fb19d0ab52b3c877c8d3d3e
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:05:11 2018 -0700
+
+    add program and makefile
+
+commit 2938e8d3bf246f483e99c08deb5ed1be22395706
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:02:14 2018 -0700
+
+    first commit
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]ls
+README.md	main*		main.f		main.o		makefile*
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]more makefile
+# Compiles main.f
+
+# CFT     = f77
+# LDR     = f77
+# mac f77 FFLAGS = -N113 -f -N1 -O
+# sgi FFLAGS  = -r8
+# CFT     = /Applications/Absoft/bin/f90
+# LDR     = /Applications/Absoft/bin/f90
+# FFLAGS  = -N113 -lU77 -s -O
+# CFT     = xlf -F:xlf_s
+# LDR     = xlf -F:xlf_s
+# CFT     = xlf 
+# LDR     = xlf
+CFT     = gfortran
+LDR     = gfortran
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -C -qflttrap
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -O2 -static
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl 
+LFLAGS = -lnlopt -lm
+# FFLAGS  = -ffixed-line-length-132 -fimplicit-none -fno-automatic -O4
+FFLAGS  = -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace
+COMMAND = main
+
+...skipping...
+FFLAGS  = -ffixed-line-length-132 -fno-automatic -Ofast -g -fcheck=all -Wall -fbacktrace
+# Compiles main.f
+
+# CFT     = f77
+# LDR     = f77
+# mac f77 FFLAGS = -N113 -f -N1 -O
+# sgi FFLAGS  = -r8
+# CFT     = /Applications/Absoft/bin/f90
+# LDR     = /Applications/Absoft/bin/f90
+# FFLAGS  = -N113 -lU77 -s -O
+# CFT     = xlf -F:xlf_s
+# LDR     = xlf -F:xlf_s
+# CFT     = xlf
+# LDR     = xlf
+CFT     = gfortran
+LDR     = gfortran
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -C -qflttrap
+# FFLAGS  = -qfixed=132 -qautodbl=dbl -qlanglvl -O2 -static
+        program githubstart
+        print*, 'First program in github'
+        print*, 'Do some math'
+        x = 0.5
+        y = atan(x)
+        print*, x,y
+        z = cos(x)
+        print*, 'Do some more math'
+        print*, x,z
+        stop
+        end
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+"main.f" 11L, 180C written
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git add main.f
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git commit -m "add more math"
+[master 8233481] add more math
+ 1 file changed, 3 insertions(+)
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 398 bytes | 398.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/stixrude/githubstart.git
+   6455dd1..8233481  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]more main.f
+        program githubstart
+        print*, 'First program in github'
+        print*, 'Do some math'
+        x = 0.5
+        y = atan(x)
+        print*, x,y
+        z = cos(x)
+        print*, 'Do some more math'
+        print*, x,z
+        stop
+        end
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]pwd
+/Users/stixrude/work/githubstart
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]ls
+README.md	main*		main.f		main.o		makefile*
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git log
+commit 8233481fa8884c8980c77edc11051cdb6f995445 (HEAD -> master, origin/master)
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:38:38 2018 -0700
+
+    add more math
+
+commit 6455dd1a3a9b002ebf9eebc84a6fd8be500f7293
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:36:57 2018 -0700
+
+    remove nlopt link
+
+commit 7b45ec55a1aec1e193c57e549bf1577c4e6c7bb9
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:33:56 2018 -0700
+
+    remove slatec library
+
+commit 717229b670a7d05a8fb19d0ab52b3c877c8d3d3e
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:05:11 2018 -0700
+
+    add program and makefile
+
+commit 2938e8d3bf246f483e99c08deb5ed1be22395706
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:02:14 2018 -0700
+
+    first commit
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]git log
+commit 8233481fa8884c8980c77edc11051cdb6f995445 (HEAD -> master, origin/master)
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:38:38 2018 -0700
+
+    add more math
+
+commit 6455dd1a3a9b002ebf9eebc84a6fd8be500f7293
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:36:57 2018 -0700
+
+    remove nlopt link
+
+commit 7b45ec55a1aec1e193c57e549bf1577c4e6c7bb9
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:33:56 2018 -0700
+
+    remove slatec library
+
+commit 717229b670a7d05a8fb19d0ab52b3c877c8d3d3e
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:05:11 2018 -0700
+
+    add program and makefile
+
+commit 2938e8d3bf246f483e99c08deb5ed1be22395706
+Author: Lars Stixrude <lstixrude@epss.ucla.edu>
+Date:   Sat Sep 1 14:02:14 2018 -0700
+
+    first commit
+stixrude@Larss-MBP[/Users/stixrude/work/githubstart]cd
+
